@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\DAM\\Segundo Año\\Servicios Y Procesos\\Trimestre_1\\Tema1\\Ejercicios\\Ejercicio5\\Ejercicio5\\Ejercicio5.csproj",
+      "projectUniqueName": "C:\\MultiHilo\\MultiHilo\\Ejercicio5\\Ejercicio5\\Ejercicio5.csproj",
       "projectName": "Ejercicio5",
-      "projectPath": "E:\\DAM\\Segundo Año\\Servicios Y Procesos\\Trimestre_1\\Tema1\\Ejercicios\\Ejercicio5\\Ejercicio5\\Ejercicio5.csproj",
+      "projectPath": "C:\\MultiHilo\\MultiHilo\\Ejercicio5\\Ejercicio5\\Ejercicio5.csproj",
       "packagesPath": "C:\\Users\\Andres Licona\\.nuget\\packages\\",
-      "outputPath": "E:\\DAM\\Segundo Año\\Servicios Y Procesos\\Trimestre_1\\Tema1\\Ejercicios\\Ejercicio5\\Ejercicio5\\obj\\",
+      "outputPath": "C:\\MultiHilo\\MultiHilo\\Ejercicio5\\Ejercicio5\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Andres Licona\\AppData\\Roaming\\NuGet\\NuGet.Config",

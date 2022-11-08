@@ -21,6 +21,11 @@
             horses[3].Position = 0;
             horses[4].Position = 0;
 
+            horses[0].Name = "Freud";
+            horses[1].Name = "Kahneman";
+            horses[2].Name = "Peterson";
+            horses[3].Name = "Grant";
+            horses[4].Name = "Goleman";
 
             do
             {

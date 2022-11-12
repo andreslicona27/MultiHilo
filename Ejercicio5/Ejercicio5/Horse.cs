@@ -9,14 +9,30 @@ namespace Ejercicio5
 {
     internal class Horse
     {
-        static readonly object l = new object();
-        static bool finished = false;
-        private int position;
+        public static readonly object l = new object();
+        public bool winnerHorse = false;
+        private int positionX;
+        private int positionY;
         private string name;
-        public int Position
+
+        public Horse(string name, int positionX, int positionY)
         {
-            set { this.position = value; }
-            get { return position; }
+            PositionX = positionX;
+            PositionY = positionY;
+            Name = name;
+            winnerHorse = false;
+        }
+
+        public int PositionX
+        {
+            set { this.positionX = value; }
+            get { return positionX; }
+        }
+
+        public int PositionY
+        {
+            set { this.positionY = value; }
+            get { return positionY; }
         }
         public string Name
         {
@@ -24,32 +40,14 @@ namespace Ejercicio5
             get { return name; }
         }
 
-        public void Run()
+        public void Posicion()
         {
-            while (!finished)
-            {
-                lock (l)
-                {
-                    if (!finished)
-                    {
-                            var random = new Random();
-                            position = random.Next(0,40);
-                            //Console.WriteLine("[" + name + "]Ditancia  = " + position + " m");
-                            Console.Write("[" + name + "]");
-                        for (int i = 0; i < position; i++)
-                        {
-                            Console.Write("*");
-                           
-                        }
-                        if (position == 40)
-                        {
-                            finished = true;
-                        }
+            Console.SetCursorPosition(PositionX, PositionY);
+        }
 
-
-                    }
-                }
-            }
+        public void Run(int gallops)
+        {
+            PositionY += gallops;
         }
     }
 }

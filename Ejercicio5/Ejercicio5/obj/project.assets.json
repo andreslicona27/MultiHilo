@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\MultiHilo\\MultiHilo\\Ejercicio5\\Ejercicio5\\Ejercicio5.csproj",
+      "projectUniqueName": "C:\\Users\\Andres Licona\\vivas\\MultiHilo\\MultiHilo\\Ejercicio5\\Ejercicio5\\Ejercicio5.csproj",
       "projectName": "Ejercicio5",
-      "projectPath": "C:\\MultiHilo\\MultiHilo\\Ejercicio5\\Ejercicio5\\Ejercicio5.csproj",
+      "projectPath": "C:\\Users\\Andres Licona\\vivas\\MultiHilo\\MultiHilo\\Ejercicio5\\Ejercicio5\\Ejercicio5.csproj",
       "packagesPath": "C:\\Users\\Andres Licona\\.nuget\\packages\\",
-      "outputPath": "C:\\MultiHilo\\MultiHilo\\Ejercicio5\\Ejercicio5\\obj\\",
+      "outputPath": "C:\\Users\\Andres Licona\\vivas\\MultiHilo\\MultiHilo\\Ejercicio5\\Ejercicio5\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Andres Licona\\AppData\\Roaming\\NuGet\\NuGet.Config",

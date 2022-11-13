@@ -9,26 +9,27 @@ namespace Ejercicio5
 {
     internal class Horse
     {
-        public static readonly object l = new object();
-        public bool winnerHorse = false;
+        private string name;
         private int positionX;
         private int positionY;
-        private string name;
+        private int trackNumber;
+        public bool winnerHorse = false;
 
-        public Horse(string name, int positionX, int positionY)
+        // BUILDERS
+        public Horse(int trackNumber, int positionX, int positionY)
         {
             PositionX = positionX;
             PositionY = positionY;
-            Name = name;
+            TrackNumber = trackNumber;
             winnerHorse = false;
         }
 
+        // SETTERS / GETTERS
         public int PositionX
         {
             set { this.positionX = value; }
             get { return positionX; }
         }
-
         public int PositionY
         {
             set { this.positionY = value; }
@@ -39,15 +40,19 @@ namespace Ejercicio5
             set { this.name = value; }
             get { return name; }
         }
-
-        public void Posicion()
+        public int TrackNumber
         {
-            Console.SetCursorPosition(PositionX, PositionY);
+            set { this.trackNumber = value; }
+            get { return trackNumber; }
         }
-
+        // FUNCTIONS
         public void Run(int gallops)
         {
-            PositionY += gallops;
+            PositionX += gallops;
+        }
+        public void Run()
+        {
+            PositionX++;
         }
     }
 }

@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Andres\\MultiHilo\\Ejercicio5\\Ejercicio5\\Ejercicio5.csproj",
+      "projectUniqueName": "C:\\Users\\Andres\\Vivas\\MultiHilo\\Ejercicio5\\Ejercicio5\\Ejercicio5.csproj",
       "projectName": "Ejercicio5",
-      "projectPath": "C:\\Users\\Andres\\MultiHilo\\Ejercicio5\\Ejercicio5\\Ejercicio5.csproj",
+      "projectPath": "C:\\Users\\Andres\\Vivas\\MultiHilo\\Ejercicio5\\Ejercicio5\\Ejercicio5.csproj",
       "packagesPath": "C:\\Users\\Andres\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Andres\\MultiHilo\\Ejercicio5\\Ejercicio5\\obj\\",
+      "outputPath": "C:\\Users\\Andres\\Vivas\\MultiHilo\\Ejercicio5\\Ejercicio5\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Andres\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -64,5 +64,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problema al leer el archivo de caché C:\\Users\\Andres\\Vivas\\MultiHilo\\Ejercicio5\\Ejercicio5\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

@@ -9,47 +9,47 @@ namespace Ejercicio5
 {
     internal class Horse
     {
-        static readonly object l = new object();
-        static bool finished = false;
-        private int position;
         private string name;
-        public int Position
+        private int positionX;
+        private int positionY;
+        private int trackNumber;
+        public bool winnerHorse = false;
+
+        // BUILDERS
+        public Horse(string name, int trackNumber, int positionX, int positionY)
         {
-            set { this.position = value; }
-            get { return position; }
+            Name = name;
+            PositionX = positionX;
+            PositionY = positionY;
+            TrackNumber = trackNumber;
+            winnerHorse = false;
         }
+
+        // SETTERS / GETTERS
         public string Name
         {
-            set { this.name = value; }
+            set { this.name= value; }
             get { return name; }
         }
-
-        public void Run()
+        public int PositionX
         {
-            while (!finished)
-            {
-                lock (l)
-                {
-                    if (!finished)
-                    {
-                            var random = new Random();
-                            position = random.Next(0,40);
-                            //Console.WriteLine("[" + name + "]Ditancia  = " + position + " m");
-                            Console.Write("[" + name + "]");
-                        for (int i = 0; i < 40; i++)
-                        {
-                            Console.Write("*");
-                           
-                        }
-                        if (position == 40)
-                        {
-                            finished = true;
-                        }
-
-
-                    }
-                }
-            }
+            set { this.positionX = value; }
+            get { return positionX; }
+        }
+        public int PositionY
+        {
+            set { this.positionY = value; }
+            get { return positionY; }
+        }
+        public int TrackNumber
+        {
+            set { this.trackNumber = value; }
+            get { return trackNumber; }
+        }
+        // FUNCTIONS
+        public void Run(int gallops)
+        {
+            PositionX += gallops;
         }
     }
 }

@@ -1,57 +1,171 @@
-﻿namespace Ejercicio5
+﻿using System.Collections;
+using System.IO.IsolatedStorage;
+
+namespace Ejercicio5
 {
     internal class Program
     {
+        static readonly private object l = new object();
+        static bool winner = false;
+
+        public static void runHorseRun(Object competitor)
+        {
+            runHorseRun((Horse)competitor);
+        }
+
+        public static void runHorseRun(Horse competitor)
+        {
+            Random random = new Random();
+            do
+            {
+                lock (l)
+                {
+                    if (!winner)
+                    {
+                        // Placing the horses in their own race lane 
+                        Console.SetCursorPosition(0, competitor.PositionY);
+                        Console.Write("{0,9} {1})", competitor.Name, competitor.TrackNumber);
+
+                        // Erase the old position of the horse
+                        Console.SetCursorPosition(competitor.PositionX, competitor.PositionY);
+                        Console.Write(" ");
+
+                        // Printing the position of the horse during the race
+                        competitor.Run(random.Next(1, 8));
+                        Console.SetCursorPosition(competitor.PositionX, competitor.PositionY);
+                        Console.Write("*");
+
+                        if (competitor.PositionX >= 100)
+                        {
+                            competitor.winnerHorse = true;
+                            winner = true;
+                        }
+                    }
+                }
+                Thread.Sleep(random.Next(100, 500));
+            } while (!winner);
+
+            lock (l)
+            {
+                if (competitor.winnerHorse)
+                {
+                    Monitor.Pulse(l);
+                }
+            }
+        }
+
         static void Main(string[] args)
         {
             Horse[] horses = new Horse[5];
             Thread[] threads = new Thread[5];
+            String[] godsNames = new String[5];
+            String[] godsReigns = new String[5];
             bool win = false;
-            int bet;
+            bool iwin = false;
+            int betHorse;
+            int repeatBet;
 
-            horses[0] = new Horse();
-            horses[1] = new Horse();
-            horses[2] = new Horse();
-            horses[3] = new Horse();
-            horses[4] = new Horse();
+            godsNames[0] = "ZEUS";
+            godsNames[1] = "ODIN";
+            godsNames[2] = "AMATERASU";
+            godsNames[3] = "INDRA";
+            godsNames[4] = "RA";
 
-            horses[0].Position = 0;
-            horses[1].Position = 0;
-            horses[2].Position = 0;
-            horses[3].Position = 0;
-            horses[4].Position = 0;
-
-            horses[0].Name = "Freud";
-            horses[1].Name = "Kahneman";
-            horses[2].Name = "Peterson";
-            horses[3].Name = "Grant";
-            horses[4].Name = "Goleman";
+            godsReigns[0] = "God of the sky and thunder";
+            godsReigns[1] = "Supreme god of all the existence";
+            godsReigns[2] = "Goddess of the sun and ruler of heaven.";
+            godsReigns[3] = "The one who controls and watches over everything";
+            godsReigns[4] = "God of the sun and the origin of life itself";
 
             do
             {
-                Console.WriteLine("HORSES\n1)Freud\n2)Kahneman\n3)Peterson\n4)Grant\n5)Goleman\nWhat horse do you bet on?");
-                bet = int.Parse(Console.ReadLine());
-
-                while (bet < 1 || bet > 5)
+                lock (l)
                 {
-                    Console.WriteLine("Bet only for horses on the list");
-                    Console.WriteLine("HORSES\n1)Freud\n2)Kahneman\n3)Peterson\n4)Grant\n5)Goleman\nWhat horse do you bet on?");
-                    bet = int.Parse(Console.ReadLine());
+                    Monitor.PulseAll(l);
                 }
 
-                for (int i =0; i < horses.Length; i++)
+                win = false;
+                try
                 {
-                    threads[i] = new Thread(horses[i].Run);
-                    threads[i].Start();
+                    Console.Clear();
+                    Console.WriteLine("MIGHTY HORSES --It is time for you to choose the best mitology--" +
+                        "\n1)Zeus\n2)Odin\n3)Amaterasu\n4)Indra\n5)Ra\n\nWhat horse do you bet on?");
+                    betHorse = int.Parse(Console.ReadLine());
+
+                    while (betHorse < 1 || betHorse > 5)
+                    {
+                        Console.Clear();
+                        Console.WriteLine("Bet only for horses on the list");
+                        Console.WriteLine("MIGHTY HORSES --It is time for you to choose the best mitology--" +
+                            "\n1)Zeus\n2)Odin\n3)Amaterasu\n4)Indra\n5)Ra\n\nWhat horse do you bet on?");
+                        betHorse = int.Parse(Console.ReadLine());
+                    }
+
+                    lock (l)
+                    {
+                        Console.Clear();
+                        for (int i = 0; i < threads.Length; i++)
+                        {
+                            horses[i] = new Horse(godsNames[i],i + 1, 13, i);
+                            threads[i] = new Thread(runHorseRun);
+                            threads[i].Start(horses[i]);
+                        }
+                        Console.SetCursorPosition(0, threads.Length);
+                        Console.WriteLine("\nYour faith lies on: {0} {1}", godsNames[betHorse - 1], godsReigns[betHorse - 1]);
+                        for (int i = 0; i < Console.WindowWidth; i++)
+                        {
+                            Console.Write("-");
+                        }
+                        Monitor.Wait(l);
+                    }
+                    Console.SetCursorPosition(0, 8);
+
+                    for (int i = 0; i < horses.Length; i++)
+                    {
+                        if (horses[i].winnerHorse)
+                        {
+                            Console.WriteLine($"The winner is the almigty: {godsNames[i]}");
+                            if (horses[i].TrackNumber == betHorse)
+                            {
+                                Console.WriteLine("You really have an unshakable faith\n");
+                                Console.WriteLine("Would you like to put your beliefs to the test again?" +
+                                    "\n1) Of course, who do you think you´re dealing with\n2) No, one time was more than enough");
+                                repeatBet = int.Parse(Console.ReadLine());
+
+                                while (repeatBet < 1 || repeatBet > 5)
+                                {
+                                    Console.WriteLine("Please answer the question with on of the options");
+                                    Console.WriteLine("Would you like to put your beliefs to the test again?" +
+                                        "\n1)Of course, who do you think you´re dealing with\n2)No, one time was more than enough");
+                                    repeatBet = int.Parse(Console.ReadLine());
+                                }
+
+                                if (repeatBet == 1)
+                                {
+                                    win = true;
+                                    winner = false;
+                                }
+                                else
+                                {
+                                    iwin = true;
+                                }
+                            }
+                        }
+                    }
                 }
-
-                Array.ForEach(threads, item => item.Join());
-                
-
+                catch (FormatException)
+                {
+                    Console.WriteLine("There´s has been an error on your bet, try again.");
+                }
             } while (win);
-            
-
-
+            if (iwin)
+            {
+                Console.WriteLine("That´s ok, but soon we will see each other again");
+            }
+            else
+            {
+                Console.WriteLine("So, it seems that your faith was not enough.");
+            }
         }
     }
 }

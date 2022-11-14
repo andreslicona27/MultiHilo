@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "rEKBmWtILzwhcHE1oF8DSw3LHQqrQQyBUUJaC6PgUdXUO3VnFQ1MhC7wilUCrOrpGoYfuy751jw1ZmTyhluSPQ==",
+  "dgSpecHash": "EAOknyMNUvs3hC7KypnoWG/EVQAn3EQX93wXNIbS7e8lanljZjl3wCdbFlCMTJ8UtZoqGURg+TxCZcqiLd0m1Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Andres\\MultiHilo\\Ejercicio5\\Ejercicio5\\Ejercicio5.csproj",
+  "projectFilePath": "C:\\Users\\Andres\\Vivas\\MultiHilo\\Ejercicio5\\Ejercicio5\\Ejercicio5.csproj",
   "expectedPackageFiles": [],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problema al leer el archivo de caché C:\\Users\\Andres\\Vivas\\MultiHilo\\Ejercicio5\\Ejercicio5\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

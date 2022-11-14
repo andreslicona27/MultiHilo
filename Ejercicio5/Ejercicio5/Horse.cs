@@ -36,7 +36,7 @@ namespace Ejercicio5
                             position = random.Next(0,40);
                             //Console.WriteLine("[" + name + "]Ditancia  = " + position + " m");
                             Console.Write("[" + name + "]");
-                        for (int i = 0; i < position; i++)
+                        for (int i = 0; i < 40; i++)
                         {
                             Console.Write("*");
                            

@@ -13,18 +13,18 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\DAM\\Segundo Año\\Servicios Y Procesos\\Trimestre_1\\Tema1\\Ejercicios\\Ejercicio3\\Ejercicio3\\Ejercicio3.csproj",
+      "projectUniqueName": "C:\\Users\\Andres Licona\\vivas\\MultiHilo\\Ejercicio3\\Ejercicio3\\Ejercicio3.csproj",
       "projectName": "Ejercicio3",
-      "projectPath": "E:\\DAM\\Segundo Año\\Servicios Y Procesos\\Trimestre_1\\Tema1\\Ejercicios\\Ejercicio3\\Ejercicio3\\Ejercicio3.csproj",
+      "projectPath": "C:\\Users\\Andres Licona\\vivas\\MultiHilo\\Ejercicio3\\Ejercicio3\\Ejercicio3.csproj",
       "packagesPath": "C:\\Users\\Andres Licona\\.nuget\\packages\\",
-      "outputPath": "E:\\DAM\\Segundo Año\\Servicios Y Procesos\\Trimestre_1\\Tema1\\Ejercicios\\Ejercicio3\\Ejercicio3\\obj\\",
+      "outputPath": "C:\\Users\\Andres Licona\\vivas\\MultiHilo\\Ejercicio3\\Ejercicio3\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Andres Licona\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net6.0-windows7.0"
+        "net6.0-windows"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -32,7 +32,7 @@
       },
       "frameworks": {
         "net6.0-windows7.0": {
-          "targetAlias": "net6.0-windows7.0",
+          "targetAlias": "net6.0-windows",
           "projectReferences": {}
         }
       },
@@ -44,7 +44,7 @@
     },
     "frameworks": {
       "net6.0-windows7.0": {
-        "targetAlias": "net6.0-windows7.0",
+        "targetAlias": "net6.0-windows",
         "imports": [
           "net461",
           "net462",

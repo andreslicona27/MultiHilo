@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Andres Licona\\vivas\\MultiHilo\\MultiHilo\\Ejercicio6\\Ejercicio6\\Ejercicio6.csproj",
+      "projectUniqueName": "C:\\Users\\Andres Licona\\vivas\\MultiHilo\\Ejercicio6\\Ejercicio6\\Ejercicio6.csproj",
       "projectName": "Ejercicio6",
-      "projectPath": "C:\\Users\\Andres Licona\\vivas\\MultiHilo\\MultiHilo\\Ejercicio6\\Ejercicio6\\Ejercicio6.csproj",
+      "projectPath": "C:\\Users\\Andres Licona\\vivas\\MultiHilo\\Ejercicio6\\Ejercicio6\\Ejercicio6.csproj",
       "packagesPath": "C:\\Users\\Andres Licona\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Andres Licona\\vivas\\MultiHilo\\MultiHilo\\Ejercicio6\\Ejercicio6\\obj\\",
+      "outputPath": "C:\\Users\\Andres Licona\\vivas\\MultiHilo\\Ejercicio6\\Ejercicio6\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Andres Licona\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -61,7 +61,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

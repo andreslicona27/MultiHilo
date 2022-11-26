@@ -13,18 +13,41 @@ namespace Ejercicio6
         Thread thread;
         MyDelegate function;
 
-        static readonly private object l = new object();
+        private static readonly object l = new object();
         private static bool isRunning = false;
-        private static bool isPaused = false;
         public int interval;
 
         // BUILDER 
         public MyTimer(MyDelegate function)
         {
-            this.function = new MyDelegate(function);
+            this.function = function;
+            thread = new Thread(MainRun);
+            thread.IsBackground = true;
+            thread.Start();
+
         }
 
         // FUNCTIONS
+        public void MainRun()
+        {
+
+            lock (l)
+            {
+                if (!isRunning)
+                {
+                    Monitor.Wait(l);
+                }
+            }
+
+
+            while (isRunning)
+            {
+                function.Invoke();
+                Thread.Sleep(interval);
+            }
+            MainRun();
+        }
+
         public void run()
         {
             while (!isRunning)
@@ -34,45 +57,30 @@ namespace Ejercicio6
                     if (!isRunning)
                     {
                         isRunning = true;
-                        thread = new Thread(printNumbers);
-                        thread.Start();
-                    }
-                    else
-                    {
-                        isPaused = true;
                         Monitor.Pulse(l);
                     }
                 }
 
+
             }
+
         }
 
         public void pause()
         {
-            while (!isPaused)
+            while (isRunning)
             {
                 lock (l)
                 {
-                    isPaused = true;
+                    if (isRunning)
+                    {
+                        isRunning = false;
+                    }
                 }
+
             }
         }
 
-        public void printNumbers()
-        {
-            while (!isPaused)
-            {
-                function.Invoke();
-                Thread.Sleep(interval);
-                lock(l)
-                {
-                    if(isPaused)
-                    {
-                        Monitor.Wait(l);
-                    }
-                }
-            }
-        }
 
     }
 }

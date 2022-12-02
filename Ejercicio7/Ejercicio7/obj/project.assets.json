@@ -8,19 +8,19 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Andres Licona\\.nuget\\packages\\": {}
+    "C:\\Users\\Andres\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Andres Licona\\vivas\\MultiHilo\\Ejercicio7\\Ejercicio7\\Ejercicio7.csproj",
+      "projectUniqueName": "C:\\Users\\Andres\\Vivas\\MultiHilo\\Ejercicio7\\Ejercicio7\\Ejercicio7.csproj",
       "projectName": "Ejercicio7",
-      "projectPath": "C:\\Users\\Andres Licona\\vivas\\MultiHilo\\Ejercicio7\\Ejercicio7\\Ejercicio7.csproj",
-      "packagesPath": "C:\\Users\\Andres Licona\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Andres Licona\\vivas\\MultiHilo\\Ejercicio7\\Ejercicio7\\obj\\",
+      "projectPath": "C:\\Users\\Andres\\Vivas\\MultiHilo\\Ejercicio7\\Ejercicio7\\Ejercicio7.csproj",
+      "packagesPath": "C:\\Users\\Andres\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Andres\\Vivas\\MultiHilo\\Ejercicio7\\Ejercicio7\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Andres Licona\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Andres\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -61,7 +61,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

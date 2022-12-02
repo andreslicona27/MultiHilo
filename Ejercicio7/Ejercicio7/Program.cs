@@ -4,11 +4,12 @@ namespace Ejercicio7
     internal class Program
     {
         private static readonly object l = new object();
-        public static bool gameFinish = comunCont == 20 || comunCont == -20;
-        public static bool animationPlaying = false;
+        public static bool gameFinish = false;
+        public static bool animationPlaying = true;
+        public static bool firstround = false;
         public static Random ran = new Random();
         static int comunCont = 0;
-        public static bool trying = comunCont == 20 || comunCont == -20;
+
 
         public static void Player1Function()
         {
@@ -21,10 +22,10 @@ namespace Ejercicio7
                     {
                         num = ran.Next(1, 11);
                         Console.SetCursorPosition(2, 4);
-                        Console.Write("PLAYER one: " + num);
+                        Console.Write("PLAYER one: {0,2}", num);
                         if (num == 5 || num == 7)
                         {
-                            if (animationPlaying)
+                            if (!animationPlaying)
                             {
                                 Monitor.Wait(l);
                                 animationPlaying = false;
@@ -35,6 +36,11 @@ namespace Ejercicio7
                             {
                                 comunCont += 5;
                                 PrintNumbers(true, true);
+                            }
+
+                            if (comunCont >= 20 || comunCont <= -20)
+                            {
+                                gameFinish = true;
                             }
                         }
                     }
@@ -54,7 +60,7 @@ namespace Ejercicio7
                     {
                         num = ran.Next(1, 11);
                         Console.SetCursorPosition(2, 5);
-                        Console.Write("PLAYER two: " + num);
+                        Console.Write("PLAYER two: {0,2}", num);
                         if (num == 5 || num == 7)
                         {
                             if (!animationPlaying)
@@ -66,8 +72,17 @@ namespace Ejercicio7
                             }
                             else
                             {
-                                comunCont -= 5;
-                                PrintNumbers(false, true);
+                                if (!firstround)
+                                {
+                                    comunCont -= 5;
+                                    PrintNumbers(false, true);
+                                }
+                                firstround = false;
+                            }
+
+                            if (comunCont >= 20 || comunCont <= -20)
+                            {
+                                gameFinish = true;
                             }
                         }
                     }
@@ -87,6 +102,11 @@ namespace Ejercicio7
                 {
                     if (!gameFinish)
                     {
+                        if (!animationPlaying)
+                        {
+                            Monitor.Wait(l);
+                        }
+
                         if (cont == 3)
                         {
                             cont = 0;
@@ -143,6 +163,7 @@ namespace Ejercicio7
                 {
                     Console.WriteLine("+1");
                 }
+                Console.WriteLine("  ");
             }
             else
             {
@@ -155,19 +176,33 @@ namespace Ejercicio7
                 {
                     Console.WriteLine("+1");
                 }
-
+                Console.WriteLine("  ");
             }
         }
 
         static void Main(string[] args)
         {
+            Console.CursorVisible = false;
             Thread player1 = new Thread(Player1Function);
             Thread player2 = new Thread(Player2Function);
             Thread display = new Thread(Display);
-            display.IsBackground = true;
+
             player1.Start();
             player2.Start();
             display.Start();
+
+            player1.Join();
+            player2.Join();
+            display.Join();
+
+            if (comunCont == 20)
+            {
+                Console.WriteLine("Player One Wins");
+            } else
+            {
+                Console.WriteLine("Player Two Wins");
+            }
+
 
         }
     }

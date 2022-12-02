@@ -76,32 +76,23 @@ namespace Ejercicio5
         {
             Horse[] horses = new Horse[5];
             Thread[] threads = new Thread[5];
-            String[] godsNames = new String[5];
-            String[] godsReigns = new String[5];
+            String[] godsNames = {"ZEUS", "ODIN", "AMATERASU", "INDRA", "RA"};
+            String[] godsReigns =
+            {
+                "God of the sky and thunder",
+                "Supreme god of all the existence",
+                "Goddess of the sun and ruler of heaven",
+                "The one who controls and watches over everything",
+                "God of the sun and the origin of life itself"
+            };
             bool win = false;
             bool iwin = false;
             int betHorse;
             int repeatBet;
 
-            godsNames[0] = "ZEUS";
-            godsNames[1] = "ODIN";
-            godsNames[2] = "AMATERASU";
-            godsNames[3] = "INDRA";
-            godsNames[4] = "RA";
-
-            godsReigns[0] = "God of the sky and thunder";
-            godsReigns[1] = "Supreme god of all the existence";
-            godsReigns[2] = "Goddess of the sun and ruler of heaven.";
-            godsReigns[3] = "The one who controls and watches over everything";
-            godsReigns[4] = "God of the sun and the origin of life itself";
 
             do
             {
-                lock (l)
-                {
-                    Monitor.PulseAll(l);
-                }
-
                 win = false;
                 try
                 {
@@ -126,6 +117,9 @@ namespace Ejercicio5
                         {
                             horses[i] = new Horse(godsNames[i], i + 1, 13, i + 1);
                             threads[i] = new Thread(runHorseRun);
+                        }
+                        for (int i = 0; i < threads.Length; i++)
+                        {
                             threads[i].Start(horses[i]);
                         }
                         Console.SetCursorPosition(0, threads.Length + 1);

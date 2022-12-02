@@ -16,6 +16,7 @@ namespace Ejercicio5
         public static void runHorseRun(Horse competitor)
         {
             Random random = new Random();
+            Console.CursorVisible = false;
             do
             {
                 lock (l)
@@ -25,6 +26,23 @@ namespace Ejercicio5
                         // Placing the horses in their own race lane 
                         Console.SetCursorPosition(0, competitor.PositionY);
                         Console.Write("{0,9} {1})", competitor.Name, competitor.TrackNumber);
+
+                        // design of the speedway
+                        Console.SetCursorPosition(14, competitor.PositionY);
+                        Console.WriteLine("|");
+                        Console.SetCursorPosition(99, competitor.PositionY);
+                        Console.WriteLine("|");
+                        for (int j = 15; j < 99; j++)
+                        {
+                            Console.SetCursorPosition(j, 0);
+                            Console.WriteLine("_");
+                        }
+                        for (int i = 15; i < 99; i++)
+                        {
+                            Console.SetCursorPosition(i, competitor.PositionY);
+                            Console.WriteLine("_");
+                        }
+
 
                         // Erase the old position of the horse
                         Console.SetCursorPosition(competitor.PositionX, competitor.PositionY);
@@ -106,19 +124,20 @@ namespace Ejercicio5
                         Console.Clear();
                         for (int i = 0; i < threads.Length; i++)
                         {
-                            horses[i] = new Horse(godsNames[i],i + 1, 13, i);
+                            horses[i] = new Horse(godsNames[i], i + 1, 13, i + 1);
                             threads[i] = new Thread(runHorseRun);
                             threads[i].Start(horses[i]);
                         }
-                        Console.SetCursorPosition(0, threads.Length);
+                        Console.SetCursorPosition(0, threads.Length + 1);
                         Console.WriteLine("\nYour faith lies on: {0} {1}", godsNames[betHorse - 1], godsReigns[betHorse - 1]);
                         for (int i = 0; i < Console.WindowWidth; i++)
                         {
                             Console.Write("-");
                         }
                         Monitor.Wait(l);
+                        Console.CursorVisible = true;
                     }
-                    Console.SetCursorPosition(0, 8);
+                    Console.SetCursorPosition(0, 10);
 
                     for (int i = 0; i < horses.Length; i++)
                     {

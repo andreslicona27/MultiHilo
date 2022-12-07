@@ -29,13 +29,13 @@ namespace Ejercicio7
                         Console.SetCursorPosition(2, 4);
                         Console.WriteLine("PLAYER one: {0,2}", num);
 
-                        if (num == 5 || num == 7)
+                        if (comunCont >= 20 || comunCont <= -20)
                         {
-                            if (comunCont >= 20 || comunCont <= -20)
-                            {
-                                gameFinish = true;
-                            }
-                            else
+                            gameFinish = true;
+                        }
+                        else
+                        {
+                            if (num == 5 || num == 7)
                             {
                                 if (animationPlaying)
                                 {
@@ -47,9 +47,10 @@ namespace Ejercicio7
                                 {
                                     comunCont += 5;
                                     PrintNumbers(true, true);
-                                }
+                                }   
+                              }
                             }
-                        }
+                         }
                     }
                 }
                 Thread.Sleep(ran.Next(100, timeSleeping));
@@ -72,13 +73,13 @@ namespace Ejercicio7
                         Console.SetCursorPosition(2, 5);
                         Console.WriteLine("PLAYER two: {0,2}", num);
 
-                        if (num == 5 || num == 7)
+                        if (comunCont >= 20 || comunCont <= -20)
                         {
-                            if (comunCont >= 20 || comunCont <= -20)
-                            {
-                                gameFinish = true;
-                            }
-                            else
+                            gameFinish = true;
+                        }
+                        else 
+                        {
+                             if (num == 5 || num == 7)
                             {
                                 if (!animationPlaying)
                                 {
@@ -187,10 +188,12 @@ namespace Ejercicio7
 
         static void Main(string[] args)
         {
-            Console.CursorVisible = false;
             Thread player1 = new Thread(Player1Function);
             Thread player2 = new Thread(Player2Function);
             Thread display = new Thread(Display);
+            
+            Console.CursorVisible = false;
+            display.IsBackground = true;
 
             player1.Start();
             player2.Start();
@@ -198,7 +201,6 @@ namespace Ejercicio7
 
             player1.Join();
             player2.Join();
-            display.Join();
 
             Console.SetCursorPosition(1, 8);
             if (comunCont >= 20)

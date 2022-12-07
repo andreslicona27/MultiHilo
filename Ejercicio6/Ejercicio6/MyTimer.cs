@@ -13,8 +13,8 @@ namespace Ejercicio6
         Thread thread;
         MyDelegate function;
 
-        private static readonly object l = new object();
-        private static bool isRunning = false;
+        private readonly object l = new object();
+        private bool isRunning = false;
         public int interval;
 
         // BUILDER 
@@ -30,54 +30,39 @@ namespace Ejercicio6
         // FUNCTIONS
         public void MainRun()
         {
-
-            lock (l)
-            {
-                if (!isRunning)
-                {
-                    Monitor.Wait(l);
-                }
-            }
-
-
-            while (isRunning)
-            {
-                function.Invoke();
-                Thread.Sleep(interval);
-            }
-            MainRun();
-        }
-
-        public void run()
-        {
-            while (!isRunning)
+            // El while true es, mientras el hilo sea background entonces que se ejecute el codigo
+            // Mientras se este ejecutando la funcion
+            while (true)
             {
                 lock (l)
                 {
                     if (!isRunning)
                     {
-                        isRunning = true;
-                        Monitor.Pulse(l);
+                        Monitor.Wait(l);
+                    }
+                    else
+                    {
+                        function.Invoke();
+                        Thread.Sleep(interval);
                     }
                 }
-
-
             }
+        }
 
+        public void run()
+        {
+            lock (l)
+            {
+                isRunning = true;
+                Monitor.Pulse(l);
+            }
         }
 
         public void pause()
         {
-            while (isRunning)
+            lock (l)
             {
-                lock (l)
-                {
-                    if (isRunning)
-                    {
-                        isRunning = false;
-                    }
-                }
-
+                isRunning = false;
             }
         }
 

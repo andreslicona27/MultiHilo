@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "H:\\DAM\\Segundo Año\\Servicios Y Procesos\\Trimestre_1\\Tema1\\Ejercicios\\Ejercicio1\\Ejercicio1\\Ejercicio1.csproj": {}
+    "C:\\Users\\Andres\\Vivas\\MultiHilo\\Ejercicio1\\Ejercicio1\\Ejercicio1.csproj": {}
   },
   "projects": {
-    "H:\\DAM\\Segundo Año\\Servicios Y Procesos\\Trimestre_1\\Tema1\\Ejercicios\\Ejercicio1\\Ejercicio1\\Ejercicio1.csproj": {
+    "C:\\Users\\Andres\\Vivas\\MultiHilo\\Ejercicio1\\Ejercicio1\\Ejercicio1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\DAM\\Segundo Año\\Servicios Y Procesos\\Trimestre_1\\Tema1\\Ejercicios\\Ejercicio1\\Ejercicio1\\Ejercicio1.csproj",
+        "projectUniqueName": "C:\\Users\\Andres\\Vivas\\MultiHilo\\Ejercicio1\\Ejercicio1\\Ejercicio1.csproj",
         "projectName": "Ejercicio1",
-        "projectPath": "H:\\DAM\\Segundo Año\\Servicios Y Procesos\\Trimestre_1\\Tema1\\Ejercicios\\Ejercicio1\\Ejercicio1\\Ejercicio1.csproj",
+        "projectPath": "C:\\Users\\Andres\\Vivas\\MultiHilo\\Ejercicio1\\Ejercicio1\\Ejercicio1.csproj",
         "packagesPath": "C:\\Users\\Andres\\.nuget\\packages\\",
-        "outputPath": "H:\\DAM\\Segundo Año\\Servicios Y Procesos\\Trimestre_1\\Tema1\\Ejercicios\\Ejercicio1\\Ejercicio1\\obj\\",
+        "outputPath": "C:\\Users\\Andres\\Vivas\\MultiHilo\\Ejercicio1\\Ejercicio1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Andres\\AppData\\Roaming\\NuGet\\NuGet.Config",

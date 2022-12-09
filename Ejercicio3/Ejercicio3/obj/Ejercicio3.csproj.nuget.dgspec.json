@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Andres Licona\\vivas\\MultiHilo\\Ejercicio3\\Ejercicio3\\Ejercicio3.csproj": {}
+    "C:\\Users\\Andres\\Vivas\\MultiHilo\\Ejercicio3\\Ejercicio3\\Ejercicio3.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Andres Licona\\vivas\\MultiHilo\\Ejercicio3\\Ejercicio3\\Ejercicio3.csproj": {
+    "C:\\Users\\Andres\\Vivas\\MultiHilo\\Ejercicio3\\Ejercicio3\\Ejercicio3.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Andres Licona\\vivas\\MultiHilo\\Ejercicio3\\Ejercicio3\\Ejercicio3.csproj",
+        "projectUniqueName": "C:\\Users\\Andres\\Vivas\\MultiHilo\\Ejercicio3\\Ejercicio3\\Ejercicio3.csproj",
         "projectName": "Ejercicio3",
-        "projectPath": "C:\\Users\\Andres Licona\\vivas\\MultiHilo\\Ejercicio3\\Ejercicio3\\Ejercicio3.csproj",
-        "packagesPath": "C:\\Users\\Andres Licona\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Andres Licona\\vivas\\MultiHilo\\Ejercicio3\\Ejercicio3\\obj\\",
+        "projectPath": "C:\\Users\\Andres\\Vivas\\MultiHilo\\Ejercicio3\\Ejercicio3\\Ejercicio3.csproj",
+        "packagesPath": "C:\\Users\\Andres\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Andres\\Vivas\\MultiHilo\\Ejercicio3\\Ejercicio3\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Andres Licona\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Andres\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

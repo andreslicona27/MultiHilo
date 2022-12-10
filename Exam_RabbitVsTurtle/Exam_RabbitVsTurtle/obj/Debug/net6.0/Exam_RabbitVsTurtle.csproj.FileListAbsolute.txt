@@ -1,0 +1,15 @@
+C:\Users\Andres Licona\vivas\MultiHilo\Exam_RabbitVsTurtle\Exam_RabbitVsTurtle\bin\Debug\net6.0\Exam_RabbitVsTurtle.exe
+C:\Users\Andres Licona\vivas\MultiHilo\Exam_RabbitVsTurtle\Exam_RabbitVsTurtle\bin\Debug\net6.0\Exam_RabbitVsTurtle.deps.json
+C:\Users\Andres Licona\vivas\MultiHilo\Exam_RabbitVsTurtle\Exam_RabbitVsTurtle\bin\Debug\net6.0\Exam_RabbitVsTurtle.runtimeconfig.json
+C:\Users\Andres Licona\vivas\MultiHilo\Exam_RabbitVsTurtle\Exam_RabbitVsTurtle\bin\Debug\net6.0\Exam_RabbitVsTurtle.dll
+C:\Users\Andres Licona\vivas\MultiHilo\Exam_RabbitVsTurtle\Exam_RabbitVsTurtle\bin\Debug\net6.0\Exam_RabbitVsTurtle.pdb
+C:\Users\Andres Licona\vivas\MultiHilo\Exam_RabbitVsTurtle\Exam_RabbitVsTurtle\obj\Debug\net6.0\Exam_RabbitVsTurtle.csproj.AssemblyReference.cache
+C:\Users\Andres Licona\vivas\MultiHilo\Exam_RabbitVsTurtle\Exam_RabbitVsTurtle\obj\Debug\net6.0\Exam_RabbitVsTurtle.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Andres Licona\vivas\MultiHilo\Exam_RabbitVsTurtle\Exam_RabbitVsTurtle\obj\Debug\net6.0\Exam_RabbitVsTurtle.AssemblyInfoInputs.cache
+C:\Users\Andres Licona\vivas\MultiHilo\Exam_RabbitVsTurtle\Exam_RabbitVsTurtle\obj\Debug\net6.0\Exam_RabbitVsTurtle.AssemblyInfo.cs
+C:\Users\Andres Licona\vivas\MultiHilo\Exam_RabbitVsTurtle\Exam_RabbitVsTurtle\obj\Debug\net6.0\Exam_RabbitVsTurtle.csproj.CoreCompileInputs.cache
+C:\Users\Andres Licona\vivas\MultiHilo\Exam_RabbitVsTurtle\Exam_RabbitVsTurtle\obj\Debug\net6.0\Exam_RabbitVsTurtle.dll
+C:\Users\Andres Licona\vivas\MultiHilo\Exam_RabbitVsTurtle\Exam_RabbitVsTurtle\obj\Debug\net6.0\refint\Exam_RabbitVsTurtle.dll
+C:\Users\Andres Licona\vivas\MultiHilo\Exam_RabbitVsTurtle\Exam_RabbitVsTurtle\obj\Debug\net6.0\Exam_RabbitVsTurtle.pdb
+C:\Users\Andres Licona\vivas\MultiHilo\Exam_RabbitVsTurtle\Exam_RabbitVsTurtle\obj\Debug\net6.0\Exam_RabbitVsTurtle.genruntimeconfig.cache
+C:\Users\Andres Licona\vivas\MultiHilo\Exam_RabbitVsTurtle\Exam_RabbitVsTurtle\obj\Debug\net6.0\ref\Exam_RabbitVsTurtle.dll

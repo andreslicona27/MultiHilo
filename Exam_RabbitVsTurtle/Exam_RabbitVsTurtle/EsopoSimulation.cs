@@ -62,20 +62,22 @@ namespace Exam_RabbitVsTurtle
                         turtleSteps++;
                         Console.WriteLine($"Leonardo move {turtleSteps} steps");
 
-                        if (turtleSteps == rabbitSteps && sleeping)
-                        {
-                            int num = rand.Next(0, 100);
-                            if (num < 50)
-                            {
-                                Console.WriteLine("Leonardo makes noise");
-                                Monitor.Pulse(l);
-                            }
-                        }
-
                         if (turtleSteps >= finishLine || rabbitSteps >= finishLine)
                         {
                             raceFinish = true;
                         }
+                        else
+                        {
+                            if (turtleSteps == rabbitSteps)
+                            {
+                                if (rand.Next(1, 101) <= 50)
+                                {
+                                    Console.WriteLine("Leonardo makes noise");
+                                    Monitor.Pulse(l);
+                                }
+                            }
+                        }
+
                     }
                 }
                 Thread.Sleep(300);
@@ -99,7 +101,9 @@ namespace Exam_RabbitVsTurtle
                         }
                         else
                         {
-                            if (rand.Next(1, 101) <= 60)
+                            int num = rand.Next(1, 101);
+                            Console.Write(num);
+                            if (num <= 60)
                             {
                                 int auxSteps = rabbitSteps;
                                 Console.WriteLine($"Seems like Bugs thinks is good time to take a nap when he made {rabbitSteps} steps");

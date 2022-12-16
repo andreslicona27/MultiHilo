@@ -47,15 +47,15 @@ namespace Ejercicio7
                                 {
                                     comunCont += 5;
                                     PrintNumbers(true, true);
-                                }   
-                              }
+                                }
                             }
-                         }
+                        }
                     }
                 }
                 Thread.Sleep(ran.Next(100, timeSleeping));
             }
         }
+
 
         public static void Player2Function()
         {
@@ -77,9 +77,9 @@ namespace Ejercicio7
                         {
                             gameFinish = true;
                         }
-                        else 
+                        else
                         {
-                             if (num == 5 || num == 7)
+                            if (num == 5 || num == 7)
                             {
                                 if (!animationPlaying)
                                 {
@@ -191,7 +191,7 @@ namespace Ejercicio7
             Thread player1 = new Thread(Player1Function);
             Thread player2 = new Thread(Player2Function);
             Thread display = new Thread(Display);
-            
+
             Console.CursorVisible = false;
             display.IsBackground = true;
 
@@ -216,3 +216,4 @@ namespace Ejercicio7
         }
     }
 }
+
